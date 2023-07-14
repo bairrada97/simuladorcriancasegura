@@ -1,0 +1,42 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "moduleResolution": "node",
+    "baseUrl": "./app",
+    "paths": {
+      "@components/*": ["_components/*"],
+      "@lib/*": ["../lib/*"],
+      "@utilities/*": ["../utilities/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/**/*.tsx",
+    ".next/types/**/*.ts",
+    "../pages/middleware.ts",
+    "public/manifest.json",
+    "../../packages/ui/components/TitleSection.tsx",
+    "../../packages/ui/components/Accordion.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

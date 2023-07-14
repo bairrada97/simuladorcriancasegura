@@ -1,0 +1,67 @@
+{
+  "theme_color": "#187C56",
+  "background_color": "#187C56",
+  "display": "standalone",
+  "start_url": "/",
+  "name": "Outscore",
+  "short_name": "Outscore",
+  "orientation": "portrait",
+  "id": "/",
+  "permissions": ["background"],
+  "related_applications": [],
+  "description": "Stay up-to-date with the latest football scores with Outscore! Get real-time updates on live matches, team stats, and more, all in one convenient app.",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["sports"],
+  "shortcuts": [
+    {
+      "name": "Favorites",
+      "short_name": "Favorites",
+      "description": "View your favorite matches",
+      "url": "/favorites",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/homepage.png",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/matchdetail-light.png",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

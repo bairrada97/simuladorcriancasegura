@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import "/styles/reseter.css";
+
+#root {
+  font-family: var(--fonts-sourceSansPro);
+  font-size: var(--fontSizes-16);
+  color: rgb(var(--colors-neu-10));
+  font-weight: var(--fontWeights-regular);
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-tap-highlight-color: "transparent";
+}
+main {
+  padding-bottom: "60px";
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  display: flex;
+  all: unset;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
