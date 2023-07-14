@@ -9,6 +9,8 @@ module.exports = withPWA({
   experimental: {
     transpilePackages: ["tsconfig", "ui", "config"],
     appDir: true,
+    serverComponentsExternalPackages: ["mysql2"],
+    serverActions: true
   },
   productionBrowserSourceMaps: true,
 });

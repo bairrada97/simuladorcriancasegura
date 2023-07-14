@@ -1,7 +1,4 @@
 import { ServerThemeProvider } from "@wits/next-themes";
-import { AnalyticsWrapper } from "./analytics";
-import { Providers } from "./provider";
-import { Metadata } from "next";
 
 // const sourceSansPro = Source_Sans_Pro({
 //   weight: ["400", "600", "700"],

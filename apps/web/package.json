@@ -7,11 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --cache .",
-    "svg": "npx @svgr/cli apps/outscore/public/icons --out-dir packages/ui/components/SvgIcons  --icon --typescript"
+    "svg": "npx @svgr/cli apps/outscore/public/icons --out-dir packages/ui/components/SvgIcons  --icon --typescript",
+    "introspect": "drizzle-kit introspect:mysql",
+    "drizzle:studio": "drizzle-kit studio",
+    "migrations:push": "drizzle-kit push:mysql",
+    "migrations:pull": "drizzle-kit pull:mysql",
+    "migrations:generate": "drizzle-kit generate:mysql"
   },
   "dependencies": {
     "@blackbox-vision/next-google-analytics": "^0.1.1",
     "@onesignal/node-onesignal": "^1.0.0-beta4",
+    "@planetscale/database": "^1.8.0",
     "@upstash/qstash": "^0.3.6",
     "@upstash/redis": "^1.20.1",
     "@vercel/analytics": "^1.0.1",
@@ -20,6 +26,8 @@
     "autoprefixer": "^10.4.14",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
+    "drizzle-kit": "^0.19.5",
+    "drizzle-orm": "^0.27.2",
     "next": "13.4.8",
     "npm": "^9.4.0",
     "npx": "^10.2.2",
@@ -35,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@ducanh2912/next-pwa": "^8.1.1",
+    "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-radio-group": "^1.1.1",
     "@radix-ui/react-switch": "^1.0.1",
@@ -45,6 +54,7 @@
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "class-variance-authority": "^0.6.0",
     "config": "workspace:*",
     "eslint": "7.32.0",
     "eslint-config-custom": "workspace:*",
@@ -67,8 +77,6 @@
     "ts-jest": "^29.0.5",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.3",
-    "zustand": "^4.2.0",
-    "@radix-ui/react-accordion": "^1.1.2",
-    "class-variance-authority": "^0.6.0"
+    "zustand": "^4.2.0"
   }
 }
