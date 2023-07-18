@@ -1,6 +1,7 @@
 import { db } from "@lib/db"
 import { ProductType, product } from "@lib/db/schema"
-import { CardOptions, Rating } from "components/Rating"
+import { Icon } from "components/Icon"
+import { CardOptionsItems, Rating } from "components/Rating"
 
 
 // oh yeah, this is the future
@@ -29,13 +30,14 @@ export default async function Home() {
       }
 
     await db.insert(product).values(newProduct)
-  }
+  } 
 
-  return (
+  return ( 
     <>
-      <p className="text-m-02--dark-01 after:top-0 uppercase font-bold grid grid-cols-[1fr_20%] after:content-[''] after:absolute">my products:</p>
-      {/* <Rating ratingValue={1.1}/> */}
-      <CardOptions type={''}/>
+      <p className="text-m-02--dark-01 after:top-0 uppercase font-bold grid grid-cols-[1fr_20%] after:content-[''] after:absolute">my products:</p> 
+      <Rating ratingValue={2.2}/>
+      {/* <CardOptionsItems type={'rating'}/> */}
+      <Icon icon="add_circle" color="m-01" size="48"/> 
       {/* {products.map((product) => (
         <div key={product.id}>{product.model}</div>
       ))}
