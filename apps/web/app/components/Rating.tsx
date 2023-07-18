@@ -1,60 +1,49 @@
-"use client"
-import React, { ComponentProps, ElementType, HTMLAttributes, useEffect, useState } from "react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@lib/utils";
+'use client';
+import React, { ComponentProps, ElementType, HTMLAttributes, useEffect, useState } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@lib/utils';
 
-
-const rating = cva("", {
-  variants: { 
-    variant: { 
-      "veryGood": ["bg-teal"], 
-      "good": ["bg-green"], 
-      "satisfatory": ["bg-yellow"],
-      "sufficient": ["bg-orange"],
-      "inadequate": ["bg-red"],
-
+const rating = cva('', {
+  variants: {
+    variant: {
+      veryGood: ['bg-teal'],
+      good: ['bg-green'],
+      satisfactory: ['bg-yellow'],
+      sufficient: ['bg-orange'],
+      inadequate: ['bg-red'],
     },
   },
 });
 
-export interface RatingProps {
-  ratingValue: number
+export interface RatingProps extends VariantProps<typeof rating> {
+  ratingValue: number;
 }
 
-export interface CardOptionsItemsProps {
-    type: string
-  }
- 
+export type RatingValuesThreshold = '1.5' | '2.5' | '3.5' | '4.5' | '5.5';
 
+export const Rating = ({ ratingValue }: RatingProps) => {
+  const [variantName, setVariantName] = useState<VariantProps<typeof rating>['variant']>('veryGood');
 
-export const CardOptionsItems = ({type
-}: CardOptionsItemsProps) => {
+  const variantMapping: Record<RatingValuesThreshold, VariantProps<typeof rating>['variant']> = {
+    '1.5': 'veryGood',
+    '2.5': 'good',
+    '3.5': 'satisfactory',
+    '4.5': 'sufficient',
+    '5.5': 'inadequate',
+  };
 
-
-return <div>{type == 'rating' ? <Rating ratingValue={1.1}/> : <span>o</span>}</div>
-
-};
-
-export const Rating = ({ratingValue
-}: RatingProps) => {
-const [variantName, setVariantName] = useState('')
   useEffect(() => {
-console.log(ratingValue)
-if(ratingValue > 0 && ratingValue <= 1.5) {
-  setVariantName('veryGood')
-} else if(ratingValue >= 1.6 && ratingValue <= 2.5) {
-  setVariantName('good')
-}
-else if(ratingValue >= 2.6 && ratingValue <= 3.5) {
-  setVariantName('satisfactory')
-}
-else if(ratingValue >= 3.6 && ratingValue <= 4.5) {
-  setVariantName('sufficient')
-}
-else if (ratingValue >= 4.6 && ratingValue <= 5.5) {
-  setVariantName('inadequate')
-}
-  }, [])
-return <span className={cn("text-20 font-medium text-neu-00", rating({variant:variantName}))}>{ratingValue}</span>
-};
+    const foundVariant = Object.keys(variantMapping).find((key) => {
+      const rating = parseFloat(key);
+      return ratingValue > 0 && ratingValue <= rating;
+    }) as RatingValuesThreshold;
 
+    if (foundVariant) {
+      setVariantName(variantMapping[foundVariant]);
+    }
+  }, []);
+
+  return (
+    <span className={cn('text-20 text-neu-00  font-medium ', rating({ variant: variantName }))}>{ratingValue}</span>
+  );
+};
