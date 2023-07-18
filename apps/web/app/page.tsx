@@ -1,15 +1,16 @@
 import { db } from "@lib/db"
 import { ProductType, product } from "@lib/db/schema"
+import { CardOptions, Rating } from "components/Rating"
 
 
 // oh yeah, this is the future
 export const runtime = 'edge'
 
 export default async function Home() {
-  const products = await db.select().from(product)
-  console.log(products)
+  // const products = await db.select().from(product)
+  // console.log(products)
   const createUser = async () => {
-    'use server'
+    'use server' 
 
     const newProduct: Omit<ProductType, 'id'> =  {
         model: 'model',
@@ -32,14 +33,16 @@ export default async function Home() {
 
   return (
     <>
-      <p>my products:</p>
-      {products.map((product) => (
+      <p className="text-m-02--dark-01 after:top-0 uppercase font-bold grid grid-cols-[1fr_20%] after:content-[''] after:absolute">my products:</p>
+      {/* <Rating ratingValue={1.1}/> */}
+      <CardOptions type={''}/>
+      {/* {products.map((product) => (
         <div key={product.id}>{product.model}</div>
       ))}
 
       <form action={createUser}>
         <button>create product</button>
-      </form>
+      </form> */}
     </>
   )
 }
