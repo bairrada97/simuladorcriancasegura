@@ -16,7 +16,7 @@ const rating = cva('', {
 });
 
 export interface RatingProps extends VariantProps<typeof rating> {
-  ratingValue: number;
+  ratingValue: number ;
 }
 
 export interface RatingItemProps {
@@ -25,43 +25,104 @@ export interface RatingItemProps {
   description: string;
 }
 
-export type RatingValuesThreshold = '1.5' | '2.5' | '3.5' | '4.5' | '5.5';
+export type RatingMinValues = '0.6' | '1.6' | '2.6' | '3.6' | '4.6';
+export type RatingMaxValues = '1.5' | '2.5' | '3.5' | '4.5' | '5.5';
+
+export type RatingCodes = VariantProps<typeof rating>['variant']
+export type RatingNames = string
+export type RatingContent= {code: RatingCodes, name: RatingNames, values: {min: RatingMinValues, max: RatingMaxValues}}
+export type VariantMapping = Record<RatingMaxValues, RatingContent>
+
+
+const variantMapping: VariantMapping = {
+  '1.5': {
+    code: 'veryGood',
+    name: 'Muito Bom',
+    values: {
+      min: '0.6',
+      max: '1.5'
+    }
+  },
+  '2.5': {
+    code: 'good',
+    name: 'Bom',
+    values: {
+      min: '1.6',
+      max: '2.5'
+    }
+        },
+  '3.5': {
+    code: 'satisfactory',
+    name: 'Satisfatório',
+    values: {
+      min: '2.6',
+      max: '3.5'
+    }
+        },
+        
+  '4.5': {
+    code: 'sufficient',
+    name: 'Suficiente',
+    values: {
+      min: '3.6',
+      max: '4.5'
+    }
+        },
+  '5.5': {
+    code: 'inadequate',
+    name: 'Inadequado',
+    values: {
+      min: '4.6',
+      max: '5.5'
+    }
+        },
+        
+};
+
 
 export const Rating = ({ ratingValue }: RatingProps) => {
-  const [variantName, setVariantName] = useState<VariantProps<typeof rating>['variant']>('veryGood');
+  const [foundRating, setFoundRating] = useState<RatingContent>({code: 'veryGood', name: 'Muito Bom', values: {min: '0.6', max: '1.5'}});
 
-  const variantMapping: Record<RatingValuesThreshold, VariantProps<typeof rating>['variant']> = {
-    '1.5': 'veryGood',
-    '2.5': 'good',
-    '3.5': 'satisfactory',
-    '4.5': 'sufficient',
-    '5.5': 'inadequate',
-  };
+
 
   useEffect(() => {
     const foundVariant = Object.keys(variantMapping).find((key) => {
       const rating = parseFloat(key);
       return ratingValue > 0 && ratingValue <= rating;
-    }) as RatingValuesThreshold;
+    }) as RatingMaxValues;
 
     if (foundVariant) {
-      setVariantName(variantMapping[foundVariant]);
+      setFoundRating(variantMapping[foundVariant]);
     }
   }, []);
 
   return (
-    <div className={cn('text-neu-00 text-14 font-medium min-w-[32px] inline-flex justify-center rounded-sm', rating({ variant: variantName }))}>{ratingValue}</div>
+    <div className={cn('text-neu-00 text-14 font-medium min-w-[32px] inline-flex justify-center rounded-sm', rating({ variant: foundRating.code }))}>{ratingValue}</div>
   );
 };
 
 
-export const RatingItem = ({color, values, description}: RatingItemProps) => {
+export const RatingItem = ({ ratingValue }: RatingProps) => {
+  const [foundRating, setFoundRating] = useState<RatingContent>({code: 'veryGood', name: 'Muito Bom', values: {min: '0.6', max: '1.5'}} );
+
+  useEffect(() => {
+    const foundVariant = Object.keys(variantMapping).find((key) => {
+      const rating = parseFloat(key);
+      return ratingValue > 0 && ratingValue <= rating;
+    }) as RatingMaxValues;
+
+    if (foundVariant) {
+      setFoundRating(variantMapping[foundVariant]);
+    }
+  }, []);
 
   return (
-    <div className="inline-flex justify-center items-center gap-8">
-      <span className={cn(`w-8 h-8 rounded-lg bg-teal flex bg-${color}`)}></span> 
-      <p className='text-14 text-neu-09 font-medium'>{values}</p> 
-      <p className='text-14 text-neu-07'>{description}</p>
-    </div>
+    <li className="inline-flex justify-center items-center gap-8">
+      <span className={cn('w-8 h-8 rounded-lg', rating({ variant: foundRating.code }))}></span> 
+      <span className='text-14 text-neu-09 font-medium min-w-[64px] flex justify-center'>{foundRating.values.min} - {foundRating.values.max}</span> 
+      <span className='text-14 text-neu-07'>{foundRating.name}</span>
+    </li>
   );
 };
+
+

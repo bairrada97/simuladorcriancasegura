@@ -37,11 +37,13 @@ export default async function Home() {
       <p className="text-m-02--dark-01 after:top-0 uppercase font-medium ">my products:</p> 
       <Rating ratingValue={1.1}/>
       <br />
-      <RatingItem color="teal" values="0.6 - 1.5" description="Muito Bom"/>
-      <RatingItem color="green" values="1.6 - 2.5" description="Bom"/>
-      <RatingItem color="orange" values="2.6 - 3.5" description="Satisfatório"/>
-      <RatingItem color="yellow" values="3.6 - 4.5" description="Suficente"/>
-      <RatingItem color="red" values="4.6 - 5.5" description="Insuficente"/>
+
+      <ul className="flex flex-col items-start">
+      {[0.6, 1.6, 2.6, 3.6, 4.6].map((ratingValue) => {
+        return <RatingItem ratingValue={ratingValue} />
+      })}
+      </ul>
+
 
       <br />
       {/* <CardOptionsItems type={'rating'}/> */}
