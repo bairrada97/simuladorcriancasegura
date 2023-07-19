@@ -1,4 +1,5 @@
 "use client"
+
 import React, {
   ComponentProps,
   ElementType,
@@ -138,7 +139,7 @@ export const RatingItem = ({ ratingValue }: RatingProps) => {
           rating({ variant: foundRating.code })
         )}
       ></span>
-      <span className="flex min-w-[64px]  justify-center text-14 font-medium text-neu-09">
+      <span className="flex min-w-[64px] justify-center text-14 font-medium text-neu-09">
         {foundRating.values.min} - {foundRating.values.max}
       </span>
       <span className="text-14 text-neu-07">{foundRating.name}</span>
