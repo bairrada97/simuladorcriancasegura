@@ -19,6 +19,12 @@ export interface RatingProps extends VariantProps<typeof rating> {
   ratingValue: number;
 }
 
+export interface RatingItemProps {
+  color: string;
+  values: string;
+  description: string;
+}
+
 export type RatingValuesThreshold = '1.5' | '2.5' | '3.5' | '4.5' | '5.5';
 
 export const Rating = ({ ratingValue }: RatingProps) => {
@@ -44,6 +50,18 @@ export const Rating = ({ ratingValue }: RatingProps) => {
   }, []);
 
   return (
-    <span className={cn('text-20 text-neu-00  font-medium ', rating({ variant: variantName }))}>{ratingValue}</span>
+    <div className={cn('text-neu-00 text-14 font-medium min-w-[32px] inline-flex justify-center rounded-sm', rating({ variant: variantName }))}>{ratingValue}</div>
+  );
+};
+
+
+export const RatingItem = ({color, values, description}: RatingItemProps) => {
+
+  return (
+    <div className="inline-flex justify-center items-center gap-8">
+      <span className={cn(`w-8 h-8 rounded-lg bg-teal flex bg-${color}`)}></span> 
+      <p className='text-14 text-neu-09 font-medium'>{values}</p> 
+      <p className='text-14 text-neu-07'>{description}</p>
+    </div>
   );
 };

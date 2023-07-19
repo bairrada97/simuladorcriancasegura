@@ -35,21 +35,6 @@ module.exports = {
       yellow: "rgb(var(--yellow) / <alpha-value>)",
       green: "rgb(var(--green) / <alpha-value>)",
       teal: "rgb(var(--teal) / <alpha-value>)",
-
-      "gra-01":
-        "106.45deg, rgb($m-01--light-01) 8.47%, rgb($m-02--dark-01) 92.4%",
-      "gra-02": "112.63deg, rgb($m-02) 10.93%, rgb($m-01--light-01) 88.2%",
-      "gra-03":
-        "97.5deg, rgb($m-02--dark-01) 4.32%, rgb($m-02--light-02) 94.22%",
-      "gra-03--inverted":
-        "97.5deg, rgb($m-02--light-02) 4.32%, rgb($m-02--dark-01) 94.22%",
-      "gra-04": "360deg, rgb($m-01) 0%, rgb($m-01--light-01) 100%",
-      "gra-05": "97.5deg, rgb($neu-10) 4.32%, rgb($neu-09) 94.22%",
-      "gra-05--inverted": "97.5deg, rgb($neu-09) 4.32%, rgb($neu-1) 94.22%",
-      "gra-06": "97.5deg, rgb($neu-08) 4.32%, rgb($neu-07) 94.22%",
-      "gra-06--inverted": "97.5deg, rgb($neu-07) 4.32%, rgb($neu-08) 94.22%",
-      "gra-07": "97.5deg, rgb($neu-06) 4.32%, rgb($neu-05) 94.22%",
-      "gra-07--inverted": "97.5deg, rgb($neu-05) 4.32%, rgb($neu-06) 94.22%",
     },
     fonts: {
       sourceSansPro: "Source Sans Pro",
@@ -71,6 +56,13 @@ module.exports = {
       medium: "500",
       semiBold: "600",
       bold: "700",
+    },
+    borderRadius: {
+      none: "0",
+      sm: "0.25rem",
+      md: "0.5rem",
+      lg: "1rem",
+      xl: "1.5rem",
     },
     zIndices: {
       1: "1",
