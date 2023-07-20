@@ -7,5 +7,9 @@ export interface IconProps {
 }
 
 export const Icon = ({ icon, color, size }: IconProps) => {
-  return <i className={cn(`material-symbols-outlined  text-${color}`)}>{icon}</i>;
+  return (
+    <div className={cn(`material-symbols-outlined text-${color}`)}>
+      <span className={cn(`text-${size}`)}>{icon}</span>
+    </div>
+  );
 };

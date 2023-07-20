@@ -2,84 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-    :root {
-      --m-01: 247 156 116;
-      --m-01--light-01: 253 218 202;
-      --m-01--light-02: 245 240 237;
-
-      --m-01--dark-01: 209 95 70;
-      --m-01--dark-02: 181 99 81;
-  
-
-      --neu-00: 255 255 255;
-      --neu-01: 248 249 250;
-      --neu-02: 241 243 245;
-      --neu-03: 233 236 23;
-      --neu-04: 222 226 230;
-      --neu-05: 206 212 218;
-      --neu-06: 164 170 176;
-      --neu-07: 106 113 120;
-      --neu-08: 79 87 94;
-      --neu-09: 39 43 48;
-      --neu-10: 16 18 19;
-  
-
-      --red: 201 42 42;
-      --orange: 247 103 7;
-      --yellow: 245 159 0;
-      --green: 116 184 22;
-      --teal: 8 127 91;
-      --cyan: 13 128 145;
-      --blue: 26 121 203;
-      --violet: 112 72 232;
-      --grape: 174 62 201;
-      --pink: 214 51 108;
-   
-      
-    }
-  }
-  
   :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-    --background: "white";
-    --foreground: "black";
-  }
-  
+    --m-01: 247 156 116;
+    --m-01--light-01: 253 218 202;
+    --m-01--light-02: 245 240 237;
 
-  
-  html {
-    background: rgb(var(--neu-02));
-    overflow-y: scroll;
-    font-family: 'Poppins', sans-serif;  
-    /* &[data-theme="dark"]: {
+    --m-01--dark-01: 209 95 70;
+    --m-01--dark-02: 181 99 81;
+
+    --neu-00: 255 255 255;
+    --neu-01: 248 249 250;
+    --neu-02: 241 243 245;
+    --neu-03: 233 236 23;
+    --neu-04: 222 226 230;
+    --neu-05: 206 212 218;
+    --neu-06: 164 170 176;
+    --neu-07: 106 113 120;
+    --neu-08: 79 87 94;
+    --neu-09: 39 43 48;
+    --neu-10: 16 18 19;
+
+    --plusTest: 170 141 67;
+
+    --red: 201 42 42;
+    --orange: 247 103 7;
+    --yellow: 245 159 0;
+    --green: 116 184 22;
+    --teal: 8 127 91;
+    --cyan: 13 128 145;
+    --blue: 26 121 203;
+    --violet: 112 72 232;
+    --grape: 174 62 201;
+    --pink: 214 51 108;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background: 'white';
+  --foreground: 'black';
+}
+
+html {
+  background: rgb(var(--neu-01));
+  overflow-y: scroll;
+  font-family: 'Poppins', sans-serif;
+  /* &[data-theme="dark"]: {
       background: rgb(var(--neu-12));
     } */
-  }
-  body {
-    margin: 0 auto;
-    font-size: var(--font-size-16);
-    color: rgb(var(--neu-10));
-    line-height: normal;
-    font-weight: var(--font-weight-regular);
-    font-family: 'Poppins', sans-serif;
-    /* "-webkit-tap-highlight-color":transparent ; */
-  }
-  
-  main {
-    padding-bottom: 80px;
-    position:relative;
-    margin: 0 auto;
-  
-  }
-  
-  a {
-    color: currentColor;
-    
-    /* &:hover: {
+}
+body {
+  margin: 0 auto;
+  font-size: var(--font-size-16);
+  color: rgb(var(--neu-10));
+  line-height: normal;
+  font-weight: var(--font-weight-regular);
+  font-family: 'Poppins', sans-serif;
+  /* "-webkit-tap-highlight-color":transparent ; */
+}
+
+main {
+  padding-bottom: 80px;
+  position: relative;
+  margin: 0 auto;
+}
+
+a {
+  color: currentColor;
+
+  /* &:hover: {
       color: currentColor;
       text-decoration: none;
     }
@@ -88,15 +82,15 @@
       border-radius: 4px;
       border: 2px solid rgb($m-02);
     } */
-  }
-  button {
-    /* &:focus-visible: {
+}
+button {
+  /* &:focus-visible: {
       border-radius: 4px;
       border: 2px solid rgb($m-02);
     } */
-  }
-  
-  /* .dark: {
+}
+
+/* .dark: {
     background: rgb($neu-12);
   }
    */

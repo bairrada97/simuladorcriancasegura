@@ -1,5 +1,4 @@
 module.exports = {
-  darkMode: ["class", '[data-theme="dark"]'],
   content: [
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -49,6 +48,8 @@ module.exports = {
       26: "1.625rem",
       28: "1.75rem",
       32: "2rem",
+      40: "2.5rem",
+      48: "3rem",
     },
 
     fontWeights: {
@@ -73,8 +74,6 @@ module.exports = {
       tablet: "(min-width: 600px)",
       motion: "(prefers-reduced-motion)",
       hover: "(any-hover: hover)",
-      dark: "(prefers-color-scheme: dark)",
-      light: "(prefers-color-scheme: light)",
     },
     spacing: {
       0: "0px",
