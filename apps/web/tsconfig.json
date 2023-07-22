@@ -12,17 +12,17 @@
     "esModuleInterop": true,
     "module": "esnext",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true, 
     "jsx": "preserve",
     "plugins": [
       {
         "name": "next"
-      }
+      } 
     ],
     "moduleResolution": "node",
     "baseUrl": "./app",
     "paths": {
-      "@components/*": ["_components/*"],
+      "@components/*": ["components/*"],
       "@lib/*": ["../lib/*"],
       "@utilities/*": ["../utilities/*"]
     }
@@ -34,9 +34,7 @@
     "**/**/*.tsx",
     ".next/types/**/*.ts",
     "../pages/middleware.ts",
-    "public/manifest.json",
-    "../../packages/ui/components/TitleSection.tsx",
-    "../../packages/ui/components/Accordion.tsx"
+    "public/manifest.json", 
   ],
   "exclude": ["node_modules"]
 }

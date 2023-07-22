@@ -1,27 +1,20 @@
 module.exports = {
-  darkMode: ["class", '[data-theme="dark"]'],
   content: [
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "../../apps/web/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     colors: {
       "m-01": "rgb(var(--m-01))",
       "m-01--light-01": "rgb(var(--m-01--light-01) / <alpha-value>)",
       "m-01--light-02": "rgb(var(--m-01--light-02) / <alpha-value>)",
-      "m-01--light-03": "rgb(var(--m-01--light-03) / <alpha-value>)",
-      "m-01--light-04": "rgb(var(--m-01--light-04) / <alpha-value>)",
       "m-01--dark-01": "rgb(var(--m-01--dark-01) / <alpha-value>)",
+      "m-01--dark-02": "rgb(var(--m-01--dark-02) / <alpha-value>)",
 
-      "m-02": "rgb(var(--m-02) / <alpha-value>)",
-      "m-02--dark-01": "rgb(var(--m-02--dark-01) / <alpha-value>)",
-      "m-02--dark-02": "rgb(var(--m-02--dark-02) / <alpha-value>)",
-      "m-02--light-01": "rgb(var(--m-02--light-01) / <alpha-value>)",
-      "m-02--light-02": "rgb(var(--m-02--light-02) / <alpha-value>)",
-      "m-02--light-03": "rgb(var(--m-02--light-03) / <alpha-value>)",
-
+      "neu-00": "rgb(var(--neu-00) / <alpha-value>)",
       "neu-01": "rgb(var(--neu-01) / <alpha-value>)",
       "neu-02": "rgb(var(--neu-02) / <alpha-value>)",
       "neu-03": "rgb(var(--neu-03) / <alpha-value>)",
@@ -36,47 +29,41 @@ module.exports = {
       "neu-12": "rgb(var(--neu-12) / <alpha-value>)",
       "neu-13": "rgb(var(--neu-13) / <alpha-value>)",
 
-      burgundy: "120, 47, 47",
-      red: "212, 66, 66",
-      orange: "248, 148, 32",
-      yellow: "255, 209, 46",
-      teal: "35, 205, 174",
-      cyan: "56, 186, 215",
-      lime: "139, 221, 33",
-      lightGreen: "52, 183, 120",
-      darkGreen: "24, 124, 86",
-      blue: "20, 121, 178",
-
-      "gra-01":
-        "106.45deg, rgb($m-01--light-01) 8.47%, rgb($m-02--dark-01) 92.4%",
-      "gra-02": "112.63deg, rgb($m-02) 10.93%, rgb($m-01--light-01) 88.2%",
-      "gra-03":
-        "97.5deg, rgb($m-02--dark-01) 4.32%, rgb($m-02--light-02) 94.22%",
-      "gra-03--inverted":
-        "97.5deg, rgb($m-02--light-02) 4.32%, rgb($m-02--dark-01) 94.22%",
-      "gra-04": "360deg, rgb($m-01) 0%, rgb($m-01--light-01) 100%",
-      "gra-05": "97.5deg, rgb($neu-10) 4.32%, rgb($neu-09) 94.22%",
-      "gra-05--inverted": "97.5deg, rgb($neu-09) 4.32%, rgb($neu-1) 94.22%",
-      "gra-06": "97.5deg, rgb($neu-08) 4.32%, rgb($neu-07) 94.22%",
-      "gra-06--inverted": "97.5deg, rgb($neu-07) 4.32%, rgb($neu-08) 94.22%",
-      "gra-07": "97.5deg, rgb($neu-06) 4.32%, rgb($neu-05) 94.22%",
-      "gra-07--inverted": "97.5deg, rgb($neu-05) 4.32%, rgb($neu-06) 94.22%",
+      red: "rgb(var(--red) / <alpha-value>)",
+      orange: "rgb(var(--orange) / <alpha-value>)",
+      yellow: "rgb(var(--yellow) / <alpha-value>)",
+      green: "rgb(var(--green) / <alpha-value>)",
+      teal: "rgb(var(--teal) / <alpha-value>)",
     },
     fonts: {
       sourceSansPro: "Source Sans Pro",
     },
     fontSize: {
-      10: "0.625rem",
-      12: "0.75rem",
       14: "0.875rem",
       16: "1rem",
       18: "1.125rem",
       20: "1.25rem",
+      22: "1.375rem",
+      24: "1.5rem",
+      26: "1.625rem",
+      28: "1.75rem",
+      32: "2rem",
+      40: "2.5rem",
+      48: "3rem",
     },
+
     fontWeights: {
       regular: "400",
+      medium: "500",
       semiBold: "600",
       bold: "700",
+    },
+    borderRadius: {
+      none: "0",
+      sm: "0.25rem",
+      md: "0.5rem",
+      lg: "1rem",
+      xl: "1.5rem",
     },
     zIndices: {
       1: "1",
@@ -87,8 +74,6 @@ module.exports = {
       tablet: "(min-width: 600px)",
       motion: "(prefers-reduced-motion)",
       hover: "(any-hover: hover)",
-      dark: "(prefers-color-scheme: dark)",
-      light: "(prefers-color-scheme: light)",
     },
     spacing: {
       0: "0px",

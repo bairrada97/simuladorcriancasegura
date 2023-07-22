@@ -23,9 +23,10 @@ export default function RootLayout({
         <head>
           <link rel="manifest" href="/manifest.json" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
           <meta name="theme-color" content="#187C56" />
         </head>
         <body>
